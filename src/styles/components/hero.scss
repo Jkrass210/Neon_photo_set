@@ -1,0 +1,275 @@
+.hero {
+ &__content {
+  padding-top: 40px;
+  padding-bottom: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+ }
+
+ &__box-left {
+  position: relative;
+  padding: 408px 60px 60px 60px;
+  background-image: url("../images/hero/beac(1920).jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+ }
+
+ &__desc {
+  font-family: "TTFirsNeue";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 100%;
+  color: $backgroundText-white-color;
+ }
+
+ &__box-right {
+  display: grid;
+ }
+
+ &__link {
+  top: 15px;
+  right: 15px;
+ }
+
+ &__subject {
+  margin-bottom: 20px;
+  font-family: "TTFirsNeue";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  color: $backgroundText-black-color;
+ }
+ 
+ &__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+ }
+
+ &__alt {
+  width: 0;
+  height: 0;
+  opacity: 0;
+ }
+
+ &__box-img {
+  min-height: 257px;
+ }
+
+ &__box-img.box-img-one {
+  min-height: 300px;
+  grid-column: 1/3;
+ }
+
+ &__picture > img {
+  object-fit: cover;
+  height: 100%;
+ }
+}
+
+.desc {
+  margin-bottom: 21px;
+}
+
+.hashtag {
+ position: absolute;
+ padding: 10px 15px;
+ font-size: 14px;
+ font-weight: 400;
+ line-height: 100%;
+ color: $backgroundText-white-color;
+ background-color: $backgroundText-black-color;
+ transition: opacity 0.4s ease-in-out;
+}
+
+.hashtag:focus {
+ outline: none;
+ opacity: 0.7;
+}
+
+.hashtag:hover,
+.hashtag:active {
+ opacity: 0.7;
+}
+
+.btn {
+ position: relative;
+ padding: 15px 22px;
+ font-size: 16px;
+ font-weight: 700;
+ background-color: $btn-orange-color;
+ color: $backgroundText-white-color;
+ transition: background-color 0.4s ease-in-out;
+}
+
+.btn::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ pointer-events: none;
+ background-color: transparent;
+ border: $btnBorderHover;
+ opacity: 0;
+ transition: opacity 0.4s ease-in-out;
+}
+
+.btn:focus {
+ outline: none;
+ background-color: $btnFocus-orange-color;
+}
+
+.btn:hover::before {
+ opacity: 1;
+}
+
+.btn:active {
+ background-color: $btnHover-orange-color;
+}
+
+.title {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: $backgroundText-white-color;
+}
+
+@media (max-width: 1230px) {
+ .hero {
+  &__content {
+   padding-top: 33px;
+  }
+
+  &__box-left {
+   padding: 425px 30px 30px 30px;
+  }
+
+  &__subject {
+    margin-bottom: 27px;
+  }
+
+  &__desc {
+    font-size: 34px;
+  }
+ }
+
+ .title {
+   margin-bottom: 10px;
+ }
+}
+
+@media (max-width: 1030px) {
+ .hero {
+   &__box-left {
+    background-image: url("../images/hero/beac(1024).jpg");
+   }
+
+   &__box-img.box-img-one {
+    min-height: 330px;
+   }
+
+   &__box-img {
+    min-height: 185px;
+  }
+ }
+}
+
+@media (max-width: 870px) {
+ .hero {
+  &__content {
+   padding-top: 80px;
+  }
+
+  &__box-left {
+   padding: 228px 25px 30px 25px;
+  }
+
+  &__subject {
+   margin-bottom: 15px;
+   font-size: 22px;
+  }
+ }
+}
+
+@media (max-width: 770px) {
+  .hero {
+   &__box-left {
+    background-image: url("../images/hero/beac(768).jpg");
+   }
+
+   &__box-img.box-img-one {
+    min-height: 228px;
+   }
+
+   &__box-img {
+    min-height: 133px;
+  }
+ }
+}
+
+@media (max-width: 690px) {
+ .hero {
+  &__content {
+    padding-top: 76px;
+    padding-bottom: 50px;
+  }
+
+  &__desc {
+    font-size: 24px;
+  }
+
+  &__dtn {
+   font-size: 14px;
+  }
+
+  &__link {
+    font-size: 12px;
+    top: 0;
+    right: 0;
+  } 
+
+  &__subject {
+   font-size: 18px;
+  }
+ }
+
+ .title {
+  font-size: 14px;
+ }
+
+ .btn {
+  font-size: 14px;
+ }
+}
+
+@media (max-width: 620px) {
+ .hero {
+  &__content {
+   grid-template-columns: 100%;
+   grid-gap: 35px;
+  }
+
+  &__box-left {
+   background-image: url("../images/hero/beac(320).jpg");
+   padding: 235px 29px 30px;
+  }
+
+  &__box-img.box-img-one {
+   min-height: 186px;
+  }
+
+  &__box-img {
+   min-height: 105px;
+  }
+ }
+
+ .hashtag {
+  font-size: 12px;
+  padding: 4px 13px;
+ }
+}

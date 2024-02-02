@@ -1,0 +1,160 @@
+.footer {
+ padding-top: 24px;
+ padding-bottom: 16px;
+ background-color: $backgroundText-black-color;
+
+ &__content {
+  display: flex;
+  justify-content: space-between;
+ }
+
+ &__desc {
+  max-width: 400px;
+  padding-right: 30px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+  color: $backgroundInput-contacts-color;
+ }
+
+ &__link-grup {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+ }
+
+ &__link {
+  color: $text-grey-color;
+  transition: color 0.4s ease-in-out;
+ }
+
+ &__link:focus {
+  outline: none;
+  color: $btn-orange-color;
+ }
+
+ &__link:hover {
+  color: $btnFocus-orange-color;
+ }
+
+ &__link:active {
+  color: $btnHover-orange-color;
+ }
+
+ &__right > .footer__desc {
+  padding: 0;
+  margin-bottom: 8px;
+ }
+}
+
+.logo {
+ display: flex;
+ flex-direction: column;
+ gap: 5px;
+
+ &__img {
+  width: 190px;
+ }
+
+ &__link {
+  position: relative;
+ }
+
+ &__link::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: $formBorder;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+ }
+
+ &__link:focus {
+  outline: none;
+ }
+
+ &__link:focus::before {
+  opacity: 1;
+ }
+
+ &__desc {
+  font-family: "TTFirsNeue";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 170%;
+  color: $backgroundInput-contacts-color;
+ }
+}
+
+@media (max-width: 1230px) {
+ .footer {
+  padding-top: 26px;
+
+  &__desc {
+   padding-left: 47px;
+   padding-right: 0;
+  }
+ }
+
+ .logo__img {
+  width: 166px;
+ }
+}
+
+@media (max-width: 870px) {
+ .footer {
+  position: relative;
+  padding-top: 29px;
+
+  &__centre {
+   display: none;
+  }
+ }
+}
+
+@media (max-width: 620px) {
+ .footer {
+  padding-bottom: 96px;
+
+  &__content {
+   justify-content: center;
+  }
+
+  &__logo {
+   width: 100%;
+   //overflow-x: hidden;
+   text-align: center;
+   padding-top: 14px;
+   padding-bottom: 17px;
+   position: absolute;
+   bottom: 0;
+   background-color: $backgroundInput-about-color;
+  }
+ }
+
+ .logo {
+  gap: 3px;
+
+  &__link {
+   display: flex;
+   justify-content: center;
+  }
+
+  &__link::before {
+   left: 0;
+   right: 0;
+  }
+
+  &__img {
+   width: 110px;
+  }
+
+  &__desc {
+   font-size: 10px;
+  }
+ }
+}

@@ -1,0 +1,24 @@
+section(class="main__section hero" id="hero")
+ div(class="hero__container container")
+  .hero__content
+   .hero__box-left
+    h1(class="hero__title title") Мастер-класс от&nbsp;Игоря Робова
+    p(class="hero__desc") Неоновый фотосет 2.0
+    p(class="hero__desc desc") 7 июля 20:00
+    button(class="hero__dtn btn btn-reset" id="heroBtn") Узнать больше
+    a(class="hero__link hashtag" href="#") #мастеркласс
+   .hero__box-right
+    h2(class="hero__subject subject") Работы участников предыдущего мастер-класса
+    - var pathes = [{path: 'images/hero/heroP1(1920).jpg', pathOne: 'images/hero/heroP1(1024).jpg', pathTwo: 'images/hero/heroP1(768).jpg', pathThree: 'images/hero/heroP1(320).jpg', alt: 'первое фото', class: 'box-img-one'}, {path: 'images/hero/heroP2(1920).jpg', pathOne: 'images/hero/heroP2(1024).jpg', pathTwo: 'images/hero/heroP2(768).jpg', pathThree: 'images/hero/heroP2(320).jpg', alt: 'второе фото', class: 'box-img-two'}, {path: 'images/hero/heroP3(1920).jpg', pathOne: 'images/hero/heroP3(1024).jpg', pathTwo: 'images/hero/heroP3(768).jpg', pathThree: 'images/hero/heroP3(320).jpg', alt: 'третье фото', class: 'box-img-tree'}]
+    ul(class="hero__list list-reset")
+     each path in pathes
+      li(class="hero__box-img " + path.class)
+       //p.hero__alt= path.alt
+       picture(class="hero__picture")
+        source(srcset= path.pathThree, media="(max-width: 350px)")
+        source(srcset= path.pathTwo, media="(max-width: 768px)")
+        source(srcset= path.pathOne, media="(max-width: 1024px)")
+        img(src= path.path, alt= path.alt)
+        
+        
+    

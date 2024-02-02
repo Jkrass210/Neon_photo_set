@@ -1,0 +1,191 @@
+.about {
+ background-color: $backgroundText-black-color;
+
+ &__container {
+  padding-top: 30px;
+  padding-bottom: 70px;
+ }
+
+ &__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+ }
+
+ &__title {
+  color: $backgroundText-white-color;
+ }
+
+ &__desc {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 175%;
+  color: $text-grey-color;
+ }
+
+ &__box {
+  position: relative;
+  display: grid;
+
+ }
+
+ &__box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(255 / 364 * 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../images/about/about(1920).jpg");
+ }
+
+ &__form {
+  display: grid;
+  grid-template-areas: 
+   'about__label about__label'
+   'about__email about__submit';
+  grid-gap: 15px 30px;
+  grid-template-columns: 1fr 126px;
+  align-self: end;
+ }
+
+ &__label {
+  grid-area: about__label;
+  display: block;
+  font-family: "TTFirsNeue";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 100%;
+  color: $backgroundText-white-color;
+ }
+
+ &__email {
+  grid-area: about__email;
+  min-width: 342px;
+  padding: 15px 23px;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: $backgroundText-white-color;
+  background-color: $backgroundInput-about-color;
+  transition: outline 0.4s ease-in-out;
+ }
+
+ &__email:focus {
+  outline: none;
+  outline: $formBorder;
+ }
+
+ &__email:hover {
+  outline: $formBorder;
+ }
+
+ &__submit {
+  grid-area: about__submit;
+ }
+}
+
+.title-section {
+ margin-bottom: 12px;
+ font-family: "TTFirsNeue";
+ font-size: 24px;
+ font-weight: 700;
+ line-height: 100%;
+}
+
+@media (max-width: 1030px) {
+ .about {
+  &__box::before {
+   height: calc(332 / 504 * 100%);
+   background-image: url("../images/about/about(1024).jpg");
+  }
+
+  &__form {
+  grid-template-areas: 
+   'about__label about__label'
+   'about__email about__email'
+   'about__submit about__submit';
+   grid-gap: 23px 30px;
+  }
+
+  &__email {
+   max-width: 342px;
+  }
+
+  &__submit {
+   max-width: 126px;
+  }
+
+  &__container {
+   padding-bottom: 84px;
+  }
+ }
+}
+
+@media (max-width: 770px) {
+ .about {
+  &__title {
+   margin-bottom: 9px;
+  }
+
+  &__box::before {
+   height: calc(569 / 769 * 100%);
+   background-image: url("../images/about/about(768).jpg");
+  }
+
+  &__container {
+   padding-top: 30px;
+   padding-bottom: 60px;
+  }
+ }
+}
+
+@media (max-width: 690px) {
+ .title-section {
+  font-size: 18px;
+ }
+
+ .about {
+  &__container {
+   padding-bottom: 56px;
+  }
+
+  &__content {
+   grid-template-columns: 1fr;
+   grid-row-gap: 27px;
+  }
+
+  &__desc {
+   font-size: 14px;
+   line-height: 178%;
+  }
+
+  &__box {
+   padding-top: 300px;
+  }
+
+  &__box::before {
+   height: 278px;
+   background-image: url("../images/about/about(768).jpg");
+  }
+
+  &__email {
+   min-width: 278px;
+   width: 100%;
+   font-size: 14px;
+  }
+
+  &__label {
+   font-size: 18px;
+  }
+
+  &__form {
+   grid-gap: 14px 30px;
+  }
+ }
+}
+

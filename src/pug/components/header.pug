@@ -1,0 +1,33 @@
+header.header
+ div(class="header__container container")
+  .header__content
+   div(class="header__logo logo")
+    a(class="logo__link" href="#")
+      img.logo__img(src="images/Logo.svg", alt="Логотип")
+   div(class="header__menu menu")
+    .menu__box
+     button(class="menu__burger burger btn-reset" id="burger")
+      span.burger__span
+      span.burger__span
+      span.burger__span
+     .menu__inside(id="menuInside")
+      button(class="menu__close close btn-reset" id="menuClose")
+       span.close__span
+       span.close__span
+      - var pointsMenu = [{name: 'О студии', id: 'aboutStudio'}, {name: 'Наши проекты', id: 'projects'}, {name: 'Услуги', id: 'services'}, {name: 'Мастер-классы', id: 'masterClasses'}, {name: 'Контакты', id: 'contacts'}]
+       ul(class="menu__list list-reset")
+        each pointMenu in pointsMenu
+         li.menu__item
+          a.menu__link(href='#' + pointMenu.id)= pointMenu.name
+      a.menu__tel(href='tel:+749542423532' id="menuTel") +7&nbsp;495 424-23-532
+   div(class="header__search search")
+    button(class="search__btn btn-reset" id="searchBtn")
+     img(src="images/search.svg", alt="Поиск")
+    .search__box
+     input.search__input(type="text" placeholder="Что будем иcкать?" id="searchInput")
+     button(class="search__close close")
+      span.close__span
+      span.close__span
+     
+      
+     

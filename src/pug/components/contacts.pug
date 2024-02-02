@@ -1,0 +1,24 @@
+section(class="main__section contacts" id="contacts")
+ div(class="contacts__container container")
+  h2(class="contacts__title title-section") Контакты
+  .contacts__content
+   .contacts__left
+    .contacts__map(id="myMap")
+    div(class="contacts__address address" id="boxAddrass")
+     button(class="address__close btn-reset close" id="closeAddeass")
+      span.close__span
+      span.close__span
+     h5.address__title Студия &laquo;High pass&raquo;
+     address.address__desc 107045, Москва, Даев переулок, дом&nbsp;41, бизнес-центр &laquo;Даев Плаза&raquo;, этаж&nbsp;8, офис &#8470;&nbsp;82
+      a(class="address__tel" href='tel:+749542423532') +7&nbsp;495 424-23-532
+   .contacts__right
+    form(class="contacts__form form" action="https://jsonplaceholder.typicode.com/posts" method="post")
+     h4.form__title Оставить заявку
+     p.form__desc Оставьте ваши данные, указав в&nbsp;графе &laquo;Комментарий&raquo; желаемые время и&nbsp;дату съёмки или другого мероприятия
+     .form__box-input
+      input(class="form__input" name="name" type="text" placeholder="Имя")
+     .form__box-input
+      input(class="form__input" name="email" type="email" placeholder="Email")
+     .form__box-input
+      textarea(class="form__input textarea" name="message", cols="30", rows="10" placeholder="Комментарий")
+     button(class="form__btn btn-reset btn" type="submit") Отправить

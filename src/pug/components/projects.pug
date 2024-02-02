@@ -1,0 +1,31 @@
+section(class="main__section projects" id="projects")
+ div(class="projects__container container")
+  h2(class="projects__title title-section") Наши проекты
+  - var cards = [{type: 1, class: 'numder-one', pathImg: "../images/projects/prog1(1920).jpg", pathOne: "../images/projects/prog1(1024).jpg", pathTwo: "../images/projects/prog1(768).jpg", pathThree: "../images/projects/prog1(320).jpg", path: '#', pathTag: '#', tag: '#пейзаж', content: 'Синтетически, смешаны с не уникальными данными до степени...', datetime: '2024-07-16', date: '16 июня', alt: 'пример пейзажа'}, {type: 1, class: 'numder-two', pathImg: "../images/projects/prog2(1920).jpg", pathOne: "../images/projects/prog2(1024).jpg", pathTwo: "../images/projects/prog2(768).jpg", pathThree: "../images/projects/prog2(320).jpg", path: '#', pathTag: '#', tag: '#портрет', content: 'В своём стремлении улучшить опыт мы упускаем, что явные...', datetime: '2024-05-28', date: '28 мая', alt: 'пример портрета'}, {type: 1, class: 'numder-three', pathImg: "../images/projects/prog3(1920).jpg", pathOne: "../images/projects/prog3(1024).jpg", pathTwo: "../images/projects/prog3(768).jpg", pathThree: "../images/projects/prog3(320).jpg", path: '#', pathTag: '#', tag: '#предмет', content: 'Равным образом, высокое качество позиционных высокотехнологичная концепция общественного уклада', datetime: '2024-05-14', date: '14 мая', alt: 'пример предмета'}, {type: 2, class: 'numder-four', pathImg: "../images/projects/prog4(1920).jpg", pathOne: "../images/projects/prog4(1024).jpg", pathTwo: "../images/projects/prog4(768).jpg", pathThree: "../images/projects/prog4(320).jpg", path: '#', pathTag: '#', tag: '#fuji', content: 'В рамках спецификации современных стандартов, интерактивные прототипы', datetime: '2024-04-09', date: '9 апреля', taitle: 'Cемантический разбор', alt: 'пример fuji'}, {type: 2, class: 'numder-five', pathImg: "../images/projects/prog5(1920).jpg", pathOne: "../images/projects/prog5(1024).jpg", pathTwo: "../images/projects/prog5(768).jpg", pathThree: "../images/projects/prog5(320).jpg", path: '#', pathTag: '#', tag: '#проектзабвение', content: 'Играет важную роль в формировании глубокомысленных рассуждений', datetime: '2024-03-20', date: '20 марта', taitle: 'Забвение', alt: 'пример проектзабвение'}, {type: 1, class: 'numder-six', pathImg: "../images/projects/prog6(1920).jpg", pathOne: "../images/projects/prog6(1024).jpg", pathTwo: "../images/projects/prog6(768).jpg", pathThree: "../images/projects/prog6(320).jpg", path: '#', pathTag: '#', tag: '#ретушь', content: 'Как принято считать, многие известные личности и по сей день остаются уделом либералов...', datetime: '2024-03-09', date: '9 марта', alt: 'пример ретушь'}, {type: 1, class: 'numder-seven', pathImg: "../images/projects/prog7(1920).jpg", pathOne: "../images/projects/prog7(1024).jpg", pathTwo: "../images/projects/prog7(768).jpg", pathThree: "../images/projects/prog7(320).jpg", path: '#', pathTag: '#', tag: '#портрет', content: 'С учётом сложившейся международной обстановки, новая модель организационной...', datetime: '2024-03-01', date: '1 марта', alt: 'пример портрета'}]
+  ul(class="projects__list list-reset")
+   each card in cards
+    if card.type == 1
+     li(class="projects__item card card-one " + card.class)
+      picture(class="projects__picture")
+       source(srcset= card.pathThree, media="(max-width: 490px)")
+       source(srcset= card.pathTwo, media="(max-width: 870px)")
+       source(srcset= card.pathOne, media="(max-width: 1230px)")
+       img(src= card.pathImg, alt= card.alt)
+      a(class='card__link' href= card.path)= card.content
+      span.card__date
+       time(datetime= card.datetime)= card.date
+      a(class='card__tag hashtag' href= card.pathTag)= card.tag
+    else if card.type == 2
+     li(class="projects__item card card-two " + card.class)
+      picture(class="projects__picture")
+       source(srcset= card.pathThree, media="(max-width: 490px)")
+       source(srcset= card.pathTwo, media="(max-width: 870px)")
+       source(srcset= card.pathOne, media="(max-width: 1230px)")
+       img(src= card.pathImg, alt= card.alt)
+      .card__box
+       span.card__date
+        time(datetime= card.datetime)= card.date
+       h4.card__taitle= card.taitle
+       p.card__desc-two= card.content
+      a(class='card__link-two btn btn-type-two' href=card.path) О&nbsp;проекте
+      a(class='card__tag hashtag' href= card.pathTag)= card.tag

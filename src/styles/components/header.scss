@@ -1,0 +1,305 @@
+.header {
+ background-color: $backgroundText-black-color;
+
+ &__container {
+  position: relative;
+  padding-top: 24px;
+  padding-bottom: 24px;
+ }
+
+ &__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+ &__logo {
+  position: relative;
+ }
+
+ .logo__link:focus {
+  outline: none;
+ }
+ 
+ .logo__link::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: $formBorder;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+ }
+ 
+ .logo__link:focus::before{
+  opacity: 1;
+ }
+
+ &__search {
+  position: relative;
+ }
+}
+
+.menu {
+ &__burger {
+  display: none;
+ }
+
+ &__close {
+  display: none;
+ }
+
+ &__list {
+  display: flex;
+  gap: 80px;
+ }
+
+ &__link {
+  padding-left: 4px;
+  padding-right: 4px;
+  font-family: "TTFirsNeue";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: $backgroundText-white-color;
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+ }
+
+ &__link:hover {
+  background-color: $btn-orange-color;
+ }
+
+ &__link:active {
+  color: $btnHover-orange-color;
+ }
+
+ &__link:focus {
+  outline: none;
+  color: $btn-orange-color;
+ }
+
+ &__tel {
+  display: none;
+ }
+}
+
+.search {
+ &__box {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+ }
+
+ &__input {
+  max-width: 0px;
+  border: none;
+  border-bottom: 1px solid $backgroundText-black-color;
+  font-family: "TTFirsNeue";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
+  background-color: $backgroundText-black-color;
+  transition: max-width 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
+ }
+
+ &__input:focus {
+  outline: none;
+ }
+
+ &__input:focus,
+ &__input:hover,
+ &__input:active {
+  border-bottom: 1px solid $btn-orange-color;
+ }
+
+ &__input--active {
+  max-width: 160px;
+  border-color: $backgroundInput-contacts-color;
+ }
+
+ &__close {
+  display: none;
+ }
+
+ &__btn:focus {
+  outline: none;
+ }
+
+ &__btn::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: $formBorder;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+ }
+
+ &__btn:focus::before {
+  opacity: 1;
+ }
+}
+
+@media (max-width: 1230px) {
+ .menu {
+  &__list {
+   gap: calc(33px + (80 - 20) * ((100vw - 1024px) / (1920 - 1024)));
+  }
+ }
+}
+
+@media (max-width: 870px) {
+ .menu {
+  &__box {
+   padding: 14px 30px;
+   position: absolute;
+   top: 100%;
+   left: 0;
+   right: 0;
+   background-color: $backgroundInput-about-color;
+  }
+
+  &__list {
+   justify-content: space-between;
+  }
+ }
+}
+
+@media (max-width: 620px) {
+ .header {
+  &__logo {
+   width: 110px;
+  }
+ }
+
+ .search {
+  &__btn {
+   width: 20px;
+   height: 20px;
+  }
+ }
+
+ .menu {
+  &__box {
+   padding: 14px 20px;
+  }
+
+  &__inside {
+   display: none;
+   padding: 14px 20px 36px;
+   height: 100vh;
+   //display: grid;
+   grid-row-gap: 14px;
+   grid-auto-rows: 18px 50% auto;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 10;
+   background-color: $backgroundText-black-color;
+  }
+
+  &__inside--active {
+   display: grid;
+  }
+
+  &__list {
+   flex-direction: column;
+   gap: 30px;
+  }
+
+  &__link {
+   padding-left: 0;
+   padding-right: 0;
+  }
+
+  &__close {
+   display: block;
+   position: relative;
+   width: 18px;
+   height: 18px;
+   border-radius: 50%;
+   background-color: $close-grey-color;
+  }
+
+  &__tel {
+   display: inline-block;
+   font-family: "TTFirsNeue";
+   padding: 5px 0 5px 25px;
+   font-size: 14px;
+   font-weight: 500;
+   line-height: 100%;
+   background-image: url("../images/mdi_call.svg");
+   background-repeat: no-repeat;
+   color: $btn-orange-color;
+   align-self: end;
+  }
+ }
+
+ .close {
+  &__span {
+   display: inline-block;
+   position: absolute;
+   left: 20%;
+   width: 60%;
+   height: 1px;
+   background-color: $backgroundText-white-color;
+  }
+
+  &__span:first-child {
+   transform: rotate(-45deg);
+  }
+
+  &__span:last-child {
+   transform: rotate(45deg);
+  }
+ }
+
+ .burger {
+  display: block;
+  width: 20px;
+  height: 18px;
+  position: relative;
+  background-color: transparent;
+
+  &__span {
+   position: absolute;
+   display: block;
+   width: 100%;
+   height: 2px;
+   background-color: $backgroundText-white-color;
+   transition: background-color 0.4s ease-in-out;
+  }
+
+  &__span:first-child {
+   left: 0;
+   top: 0;
+  }
+ 
+  &__span:nth-child(2) {
+   left: 0;
+   top: 50%;
+   transform: translateY(-50%);
+  }
+ 
+  &__span:last-child {
+   width: 50%;
+   left: 0;
+   bottom: 0;
+  }
+ }
+
+ .burger:focus {
+  outline: none;
+ }
+
+ .burger:hover .burger__span,
+ .burger:active .burger__span {
+   background-color: $btn-orange-color;
+ }
+}

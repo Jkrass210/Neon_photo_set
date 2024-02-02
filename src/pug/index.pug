@@ -1,0 +1,19 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title= "High pass"
+    link(rel="stylesheet", href="css/normalize.css")
+    link(rel="stylesheet", href="css/style.css")
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API-ключ&lang=ru_RU", defer)
+    script(src="js/main.js", defer)
+  body
+      include components/header.pug
+      main.main
+        include components/hero.pug
+        include components/about.pug
+        include components/projects.pug
+        include components/contacts.pug
+      include components/footer.pug
+      
