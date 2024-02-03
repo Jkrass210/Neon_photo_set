@@ -8,5 +8,6 @@
 - _при верстке использованы препроцессоры_
     - _pug_
     - _scss_
+- _CSS Grid_
 
 ## [КЛИКАЙ ДЛЯ ПРОСМОТРА](https://jkrass210.github.io/Neon_photo_set/)
