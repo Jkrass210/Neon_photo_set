@@ -63,6 +63,7 @@
  }
 
  &__email {
+  position: relative;
   grid-area: about__email;
   min-width: 342px;
   padding: 15px 23px;
@@ -72,15 +73,14 @@
   line-height: 100%;
   color: $backgroundText-white-color;
   background-color: $backgroundInput-about-color;
-  transition: outline 0.4s ease-in-out;
  }
 
  &__email:focus {
-  outline: none;
   outline: $formBorder;
  }
 
- &__email:hover {
+ &__email:hover,
+ &__email:active {
   outline: $formBorder;
  }
 
